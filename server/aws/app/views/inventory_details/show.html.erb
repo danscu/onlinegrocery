@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Supplierid:</strong>
+  <%= @inventory_detail.supplierID %>
+</p>
+
+<p>
+  <strong>Itemname:</strong>
+  <%= @inventory_detail.itemName %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @inventory_detail.category %>
+</p>
+
+<p>
+  <strong>Itempriceperunit:</strong>
+  <%= @inventory_detail.itemPricePerUnit %>
+</p>
+
+<p>
+  <strong>Itemweight:</strong>
+  <%= @inventory_detail.itemWeight %>
+</p>
+
+<p>
+  <strong>Itemsinstock:</strong>
+  <%= @inventory_detail.itemsInStock %>
+</p>
+
+<p>
+  <strong>Imagesrc:</strong>
+  <%= @inventory_detail.imageSrc %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_detail_path(@inventory_detail) %> |
+<%= link_to 'Back', inventory_details_path %>

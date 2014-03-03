@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Orderdate:</strong>
+  <%= @order_history_joint.orderDate %>
+</p>
+
+<p>
+  <strong>Ordernumber:</strong>
+  <%= @order_history_joint.orderNumber %>
+</p>
+
+<p>
+  <strong>Orderstatus:</strong>
+  <%= @order_history_joint.orderStatus %>
+</p>
+
+<p>
+  <strong>Paymenttypeid:</strong>
+  <%= @order_history_joint.paymentTypeID %>
+</p>
+
+<p>
+  <strong>Shippingaddress:</strong>
+  <%= @order_history_joint.shippingAddress %>
+</p>
+
+<%= link_to 'Edit', edit_order_history_joint_path(@order_history_joint) %> |
+<%= link_to 'Back', order_history_joints_path %>

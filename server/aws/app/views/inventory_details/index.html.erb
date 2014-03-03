@@ -1,0 +1,39 @@
+<h1>Listing inventory_details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Supplierid</th>
+      <th>Itemname</th>
+      <th>Category</th>
+      <th>Itempriceperunit</th>
+      <th>Itemweight</th>
+      <th>Itemsinstock</th>
+      <th>Imagesrc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inventory_details.each do |inventory_detail| %>
+      <tr>
+        <td><%= inventory_detail.supplierID %></td>
+        <td><%= inventory_detail.itemName %></td>
+        <td><%= inventory_detail.category %></td>
+        <td><%= inventory_detail.itemPricePerUnit %></td>
+        <td><%= inventory_detail.itemWeight %></td>
+        <td><%= inventory_detail.itemsInStock %></td>
+        <td><%= inventory_detail.imageSrc %></td>
+        <td><%= link_to 'Show', inventory_detail %></td>
+        <td><%= link_to 'Edit', edit_inventory_detail_path(inventory_detail) %></td>
+        <td><%= link_to 'Destroy', inventory_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inventory detail', new_inventory_detail_path %>

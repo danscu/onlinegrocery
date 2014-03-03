@@ -1,0 +1,29 @@
+<h1>Listing shipping_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Shippingtype</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shipping_types.each do |shipping_type| %>
+      <tr>
+        <td><%= shipping_type.userID %></td>
+        <td><%= shipping_type.shippingType %></td>
+        <td><%= link_to 'Show', shipping_type %></td>
+        <td><%= link_to 'Edit', edit_shipping_type_path(shipping_type) %></td>
+        <td><%= link_to 'Destroy', shipping_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shipping type', new_shipping_type_path %>

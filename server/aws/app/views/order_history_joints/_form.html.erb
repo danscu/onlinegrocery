@@ -1,0 +1,37 @@
+<%= form_for(@order_history_joint) do |f| %>
+  <% if @order_history_joint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order_history_joint.errors.count, "error") %> prohibited this order_history_joint from being saved:</h2>
+
+      <ul>
+      <% @order_history_joint.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :orderDate %><br>
+    <%= f.datetime_select :orderDate %>
+  </div>
+  <div class="field">
+    <%= f.label :orderNumber %><br>
+    <%= f.text_field :orderNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :orderStatus %><br>
+    <%= f.number_field :orderStatus %>
+  </div>
+  <div class="field">
+    <%= f.label :paymentTypeID %><br>
+    <%= f.number_field :paymentTypeID %>
+  </div>
+  <div class="field">
+    <%= f.label :shippingAddress %><br>
+    <%= f.text_field :shippingAddress %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

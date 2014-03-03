@@ -1,0 +1,16 @@
+[global]
+ApplicationName=onlinegrocery
+AwsCredentialFile=/home/danke/.elasticbeanstalk/aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.us-west-1.amazonaws.com
+EnvironmentName=onlinegrocery-env
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=/home/danke/work/classes/COEN-Capstone/onlinegrocery/trunk/server/aws/.elasticbeanstalk/optionsettings.onlinegrocery-env
+RdsDeletionPolicy=Delete
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+Region=us-west-1
+ServiceEndpoint=https://elasticbeanstalk.us-west-1.amazonaws.com
+SolutionStack=64bit Amazon Linux 2013.09 running Ruby 1.9.3
+

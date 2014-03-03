@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Suppliername:</strong>
+  <%= @supplier_account.supplierName %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @supplier_account.userName %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @supplier_account.password %>
+</p>
+
+<p>
+  <strong>Streetaddress:</strong>
+  <%= @supplier_account.streetAddress %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @supplier_account.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @supplier_account.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @supplier_account.zipcode %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @supplier_account.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @supplier_account.email %>
+</p>
+
+<%= link_to 'Edit', edit_supplier_account_path(@supplier_account) %> |
+<%= link_to 'Back', supplier_accounts_path %>

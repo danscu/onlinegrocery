@@ -1,0 +1,43 @@
+<h1>Listing supplier_accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Suppliername</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Streetaddress</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supplier_accounts.each do |supplier_account| %>
+      <tr>
+        <td><%= supplier_account.supplierName %></td>
+        <td><%= supplier_account.userName %></td>
+        <td><%= supplier_account.password %></td>
+        <td><%= supplier_account.streetAddress %></td>
+        <td><%= supplier_account.city %></td>
+        <td><%= supplier_account.state %></td>
+        <td><%= supplier_account.zipcode %></td>
+        <td><%= supplier_account.phone %></td>
+        <td><%= supplier_account.email %></td>
+        <td><%= link_to 'Show', supplier_account %></td>
+        <td><%= link_to 'Edit', edit_supplier_account_path(supplier_account) %></td>
+        <td><%= link_to 'Destroy', supplier_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supplier account', new_supplier_account_path %>

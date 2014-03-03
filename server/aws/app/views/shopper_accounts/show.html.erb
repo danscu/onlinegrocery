@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @shopper_account.userName %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @shopper_account.password %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @shopper_account.firstName %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @shopper_account.lastName %>
+</p>
+
+<p>
+  <strong>Streetaddress:</strong>
+  <%= @shopper_account.streetAddress %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @shopper_account.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @shopper_account.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @shopper_account.zipcode %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @shopper_account.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @shopper_account.email %>
+</p>
+
+<%= link_to 'Edit', edit_shopper_account_path(@shopper_account) %> |
+<%= link_to 'Back', shopper_accounts_path %>

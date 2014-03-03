@@ -1,0 +1,45 @@
+<h1>Listing shopper_accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Streetaddress</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shopper_accounts.each do |shopper_account| %>
+      <tr>
+        <td><%= shopper_account.userName %></td>
+        <td><%= shopper_account.password %></td>
+        <td><%= shopper_account.firstName %></td>
+        <td><%= shopper_account.lastName %></td>
+        <td><%= shopper_account.streetAddress %></td>
+        <td><%= shopper_account.city %></td>
+        <td><%= shopper_account.state %></td>
+        <td><%= shopper_account.zipcode %></td>
+        <td><%= shopper_account.phone %></td>
+        <td><%= shopper_account.email %></td>
+        <td><%= link_to 'Show', shopper_account %></td>
+        <td><%= link_to 'Edit', edit_shopper_account_path(shopper_account) %></td>
+        <td><%= link_to 'Destroy', shopper_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shopper account', new_shopper_account_path %>

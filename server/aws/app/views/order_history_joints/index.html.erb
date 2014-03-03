@@ -1,0 +1,35 @@
+<h1>Listing order_history_joints</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Orderdate</th>
+      <th>Ordernumber</th>
+      <th>Orderstatus</th>
+      <th>Paymenttypeid</th>
+      <th>Shippingaddress</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_history_joints.each do |order_history_joint| %>
+      <tr>
+        <td><%= order_history_joint.orderDate %></td>
+        <td><%= order_history_joint.orderNumber %></td>
+        <td><%= order_history_joint.orderStatus %></td>
+        <td><%= order_history_joint.paymentTypeID %></td>
+        <td><%= order_history_joint.shippingAddress %></td>
+        <td><%= link_to 'Show', order_history_joint %></td>
+        <td><%= link_to 'Edit', edit_order_history_joint_path(order_history_joint) %></td>
+        <td><%= link_to 'Destroy', order_history_joint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order history joint', new_order_history_joint_path %>

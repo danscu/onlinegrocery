@@ -1,0 +1,31 @@
+<h1>Listing order_histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Itemid</th>
+      <th>Quantity</th>
+      <th>Priceperunit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_histories.each do |order_history| %>
+      <tr>
+        <td><%= order_history.itemID %></td>
+        <td><%= order_history.quantity %></td>
+        <td><%= order_history.pricePerUnit %></td>
+        <td><%= link_to 'Show', order_history %></td>
+        <td><%= link_to 'Edit', edit_order_history_path(order_history) %></td>
+        <td><%= link_to 'Destroy', order_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order history', new_order_history_path %>

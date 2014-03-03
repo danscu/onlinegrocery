@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supplierID: 1
+  itemName: MyString
+  category: MyString
+  itemPricePerUnit: 9.99
+  itemWeight: 9.99
+  itemsInStock: 9.99
+  imageSrc: MyString
+
+two:
+  supplierID: 1
+  itemName: MyString
+  category: MyString
+  itemPricePerUnit: 9.99
+  itemWeight: 9.99
+  itemsInStock: 9.99
+  imageSrc: MyString

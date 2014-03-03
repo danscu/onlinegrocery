@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderDate: 2014-03-02 15:15:32
+  orderNumber: MyString
+  orderStatus: 1
+  paymentTypeID: 1
+  shippingAddress: MyString
+
+two:
+  orderDate: 2014-03-02 15:15:32
+  orderNumber: MyString
+  orderStatus: 1
+  paymentTypeID: 1
+  shippingAddress: MyString
