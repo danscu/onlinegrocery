@@ -22,12 +22,28 @@
         android:layout_below="@+id/textView1"
         android:text="Create New Shopper" />
 
+    <Button
+        android:id="@+id/button_list_shoppers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_new_shopper"
+        android:layout_below="@+id/button_new_shopper"
+        android:text="List shoppers" />
+    
+    <Button
+        android:id="@+id/button_get_shopper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_list_shoppers"
+        android:layout_below="@+id/button_list_shoppers"
+        android:text="Get shopper 23" />
+    
     <TextView
         android:id="@+id/textViewResponse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/button_new_shopper"
-        android:text="" />
+        android:layout_below="@+id/button_get_shopper"
+        android:text=" " />
     
 </RelativeLayout>
