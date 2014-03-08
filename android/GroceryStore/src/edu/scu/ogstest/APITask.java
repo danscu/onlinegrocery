@@ -10,6 +10,7 @@ import java.util.Map;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -118,6 +119,14 @@ public class APITask extends AsyncTask<Object, Void, APITask.APIResult> {
 		return (APITask) execute(Operation.READ, null, id);
 	}
 	
+	public APITask update(int id, APIData data) {
+		return (APITask) execute(Operation.UPDATE, data, id);
+	}
+	
+	public APITask delete(int id) {
+		return (APITask) execute(Operation.DELETE, null, id);
+	}
+	
 	@Override
 	protected APIResult doInBackground(Object... args) {
 		Operation op = (Operation) args[0];
@@ -136,6 +145,13 @@ public class APITask extends AsyncTask<Object, Void, APITask.APIResult> {
 			break;
 		case READ:
 			httpreq = new HttpGet(Params.Host + "/" + what.getUrl() + "/" + id + ".json");
+			break;
+		case UPDATE:
+			httpreq = new HttpPost(Params.Host + "/" + what.getUrl() + "/" + id + ".json");
+			break;
+		case DELETE:
+			httpreq = new HttpDelete(Params.Host + "/" + what.getUrl() + "/" + id + ".json");
+			break;
 		default:
 			break;
 		}
