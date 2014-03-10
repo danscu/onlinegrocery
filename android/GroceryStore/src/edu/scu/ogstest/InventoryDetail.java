@@ -1,13 +1,13 @@
 package edu.scu.ogstest;
 
 public class InventoryDetail extends APIData {
-	int supplierID;
-	String itemName;
-	String category;
-	String itemPricePerUnit;
-	String itemWeight;
-	String itemsInStock;
-	String imageSrc;
+	public int supplierID;
+	public String itemName;
+	public String category;
+	public String itemPricePerUnit;
+	public String itemWeight;
+	public String itemsInStock;
+	public String imageSrc;
 
 	@Override
 	public String toString() {

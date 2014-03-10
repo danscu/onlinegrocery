@@ -38,6 +38,7 @@ public class LoginActivity extends Activity implements Callback {
 	public void onClickLogin(View view) throws InterruptedException {
 		if (users == null) {
 			reportError("Try again...");
+			return;
 		}
 		
 		String username = textUsername.getText().toString();
@@ -46,8 +47,10 @@ public class LoginActivity extends Activity implements Callback {
 			if (acc.userName.equals(username) && acc.password.equals(password)) {
 				// take to login
 				reportError("Logging in...");
-				Thread.sleep(2000);
-				// TODO jump to product
+				
+				// transit to browsing page
+				Intent intent = new Intent(this, BrowseActivity.class);
+				startActivity(intent);
 				return;
 			}
 		}
@@ -80,6 +83,7 @@ public class LoginActivity extends Activity implements Callback {
 		switch (result.op) {
 		case LIST:
 			users = (List<ShopperAccount>) result.dataList;
+			textError.setText("Ready");
 			break;
 		case READ:
 			break;
