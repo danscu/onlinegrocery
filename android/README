@@ -1,1 +1,7 @@
 This is the Android client application for the Online Grocery Store.
+
+- GroceryStore
+  The main application which we development for the class
+  
+- OGSTest
+  Test application for the API/DB stuff. You can use it to try the API.
