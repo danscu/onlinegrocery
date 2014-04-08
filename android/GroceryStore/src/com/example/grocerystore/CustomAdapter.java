@@ -22,12 +22,12 @@ public class CustomAdapter extends ArrayAdapter<String> {
 	Context context;
 	List<String> labels;
 	List<String> thumbnails;
-	List<String> priceList;
+	List<Double> priceList;
 	URL imgurl = null;
 	Bitmap bitmap;
 	
 	public CustomAdapter(Context context, int resource,
-			List<String> label, List<String> thumbnails, List<String> priceList) {
+			List<String> label, List<String> thumbnails, List<Double> priceList) {
 		super(context, resource, R.layout.activity_adapter, label);			
 		this.context = context;
 		this.labels = label;
@@ -43,13 +43,15 @@ public class CustomAdapter extends ArrayAdapter<String> {
 		TextView label = (TextView)v.findViewById(R.id.label);
 		TextView price = (TextView)v.findViewById(R.id.price);
 		ImageView thumbnail = (ImageView)v.findViewById(R.id.image);
-		
+
 		label.setText(labels.get(position));
-		if (priceList.get(position).length() != 0)
-			price.setText("$" + priceList.get(position));
-		else
-			price.setText("N/A");
-		
+		if (priceList != null) {
+			if (priceList.size() > position && priceList.get(position) != null)
+				price.setText("$" + priceList.get(position));
+			else
+				price.setText("N/A");
+		}
+
 		try {
 			imgurl = new URL(thumbnails.get(position));
 		} catch (MalformedURLException e) {

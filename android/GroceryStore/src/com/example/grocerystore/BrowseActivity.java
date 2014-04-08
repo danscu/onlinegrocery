@@ -24,7 +24,7 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 	CustomAdapter adapter;
 	List<String> labels;
 	List<String> thumbnails;
-	List<String> priceList;
+	List<Double> priceList;
 	
 	protected List<InventoryDetail> products;
 
@@ -37,7 +37,7 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 		
 		labels = new ArrayList<String>();
 		thumbnails = new ArrayList<String>();
-		priceList = new ArrayList<String>();
+		priceList = new ArrayList<Double>();
 
 		listProducts();
 	}
@@ -57,17 +57,17 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 	protected void updateProducts() {
 		labels.clear();
 		thumbnails.clear();
+		priceList.clear();
 		for (InventoryDetail inv : products) {
 		     labels.add(inv.itemName);
 		     thumbnails.add(inv.imageSrc);
-		     priceList.add(inv.itemPricePerUnit);
-		     /*
-		     double price = 0;
+
+		     Double price = null;
 		     try {
 		    	 price = Double.parseDouble(inv.itemPricePerUnit);
 		     } catch (NumberFormatException e) { }
-		     System.out.println(price);
-		     */
+
+		     priceList.add(price);
 		}
 		
 		adapter = new CustomAdapter(this, R.layout.activity_adapter, labels, thumbnails, priceList);
