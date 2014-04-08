@@ -24,6 +24,7 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 	CustomAdapter adapter;
 	List<String> labels;
 	List<String> thumbnails;
+	List<String> priceList;
 	
 	protected List<InventoryDetail> products;
 
@@ -36,9 +37,11 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 		
 		labels = new ArrayList<String>();
 		thumbnails = new ArrayList<String>();
+		priceList = new ArrayList<String>();
+
 		listProducts();
 	}
-	
+
 	private void listProducts() {
 		APITask api = new APITask(APITask.WhatToAccess.INVENTORY_DETAIL, this);
 		api.listData();
@@ -57,6 +60,7 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 		for (InventoryDetail inv : products) {
 		     labels.add(inv.itemName);
 		     thumbnails.add(inv.imageSrc);
+		     priceList.add(inv.itemPricePerUnit);
 		     /*
 		     double price = 0;
 		     try {
@@ -66,7 +70,7 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 		     */
 		}
 		
-		adapter = new CustomAdapter(this, R.layout.activity_adapter, labels, thumbnails);
+		adapter = new CustomAdapter(this, R.layout.activity_adapter, labels, thumbnails, priceList);
 		lv.setAdapter(adapter);
 	}
 

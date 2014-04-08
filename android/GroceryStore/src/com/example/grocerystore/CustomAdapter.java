@@ -22,15 +22,17 @@ public class CustomAdapter extends ArrayAdapter<String> {
 	Context context;
 	List<String> labels;
 	List<String> thumbnails;
+	List<String> priceList;
 	URL imgurl = null;
 	Bitmap bitmap;
 	
 	public CustomAdapter(Context context, int resource,
-			List<String> label, List<String> thumbnails) {
+			List<String> label, List<String> thumbnails, List<String> priceList) {
 		super(context, resource, R.layout.activity_adapter, label);			
 		this.context = context;
 		this.labels = label;
 		this.thumbnails = thumbnails;
+		this.priceList = priceList;
 	}
 
 	@Override
@@ -39,9 +41,14 @@ public class CustomAdapter extends ArrayAdapter<String> {
 		View v = layoutInflater.inflate(R.layout.activity_adapter, null);
 		
 		TextView label = (TextView)v.findViewById(R.id.label);
+		TextView price = (TextView)v.findViewById(R.id.price);
 		ImageView thumbnail = (ImageView)v.findViewById(R.id.image);
 		
 		label.setText(labels.get(position));
+		if (priceList.get(position).length() != 0)
+			price.setText("$" + priceList.get(position));
+		else
+			price.setText("N/A");
 		
 		try {
 			imgurl = new URL(thumbnails.get(position));
@@ -49,6 +56,8 @@ public class CustomAdapter extends ArrayAdapter<String> {
 			// TODO handle this by using a default image
 			return v;
 		} 
+
+		/* Temporarily disable image due to UI thread conflict
 		try {
 			bitmap = BitmapFactory.decodeStream(imgurl.openConnection() .getInputStream());
 		} catch (IOException e) {
@@ -56,7 +65,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
 			return v;
 		} 
 		thumbnail.setImageBitmap(bitmap);
-
+		 */
 		return v;
 	}
 }
