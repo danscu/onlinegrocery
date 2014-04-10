@@ -22,7 +22,8 @@ public class MainActivity extends Activity implements OnClickListener, APITask.C
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ogstest);
-		
+
+		// This is a new comment
 		textViewResponse = (TextView) findViewById(R.id.textViewResponse);
 		
 		btnCreateShopper = (Button) findViewById(R.id.button_new_shopper);
