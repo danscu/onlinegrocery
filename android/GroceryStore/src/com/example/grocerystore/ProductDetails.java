@@ -48,6 +48,8 @@ public class ProductDetails extends Activity {
 		thumbnail = intent.getStringExtra("thumbnails");
 		price = intent.getDoubleExtra("price", 0);
 
+		tvPrice = (TextView) findViewById(R.id.label_price);
+		tvPrice.setText("$" + price);
 		
 		rg = (RadioGroup)findViewById(R.id.radioGroup1);
 		rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
