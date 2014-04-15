@@ -30,15 +30,20 @@
             android:name="com.example.grocerystore.RegistrationActivity"
             android:label="@string/app_name" >
         </activity>      
-        
+
         <activity
             android:name="edu.scu.ogstest.CustomAdapter"
             android:label="@string/title_activity_custom_adapter" >
         </activity>
-        
+
         <activity
             android:name="com.example.grocerystore.BrowseActivity"
             android:label="@string/title_activity_browse" >
+        </activity>
+
+        <activity
+            android:name="com.example.grocerystore.ProductDetails"
+            android:label="@string/title_activity_product_details" >
         </activity>
     </application>
 

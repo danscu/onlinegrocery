@@ -7,5 +7,6 @@
     <string name="ogstest">Online Grocery API Test</string>
     <string name="title_activity_custom_adapter">CustomAdapterActivity</string>
     <string name="title_activity_browse">BrowseActivity</string>
+    <string name="title_activity_product_details">Product Details</string>
     
 </resources>

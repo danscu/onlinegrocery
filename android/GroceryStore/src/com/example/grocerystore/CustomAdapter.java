@@ -1,11 +1,14 @@
 package com.example.grocerystore;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +51,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
 		}
 
 		BitmapWorkerTask task = new BitmapWorkerTask(thumbnail);
-	    task.execute(thumbnails.get(position));
+	        task.execute(thumbnails.get(position));
 
 		return v;
 	}

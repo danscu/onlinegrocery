@@ -4,15 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-
-import com.example.grocerystore.R;
-
 import edu.scu.ogstest.APITask;
 import edu.scu.ogstest.APITask.APIErrorCode;
 import edu.scu.ogstest.APITask.APIResult;
@@ -90,6 +89,12 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-		System.out.println(pos + " " + id);
+		//System.out.println(pos + " " + id);
+		Intent intent = new Intent(BrowseActivity.this, ProductDetails.class);
+		intent.putExtra("pos", pos);
+		intent.putExtra("label", labels.get(pos));
+		intent.putExtra("image", thumbnails.get(pos));
+		intent.putExtra("price", priceList.get(pos));
+		startActivity(intent);
 	}
 }
