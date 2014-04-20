@@ -10,8 +10,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.grocerystore.R;
-
 public class MainActivity extends Activity implements OnClickListener, APITask.Callback {
 	private Button btnCreateShopper;
 	private Button btnListShopper;
