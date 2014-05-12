@@ -24,6 +24,7 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 	List<String> labels;
 	List<String> thumbnails;
 	List<Double> priceList;
+	List<Float> ratings;
 	
 	protected List<InventoryDetail> products;
 
@@ -37,6 +38,7 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 		labels = new ArrayList<String>();
 		thumbnails = new ArrayList<String>();
 		priceList = new ArrayList<Double>();
+		ratings = new ArrayList<Float>();
 
 		listProducts();
 	}
@@ -69,7 +71,13 @@ public class BrowseActivity extends Activity implements Callback, OnItemClickLis
 		     priceList.add(price);
 		}
 		
-		adapter = new CustomAdapter(this, R.layout.activity_adapter, labels, thumbnails, priceList);
+		// hardcoded ratings ArrayList for testing, will need to pull ratings from DB
+		ratings.add((float) 3.5); 
+		ratings.add((float) 2.0);
+		ratings.add((float) 4.0);
+		ratings.add((float) 3.5);
+		
+		adapter = new CustomAdapter(this, R.layout.activity_adapter, labels, thumbnails, priceList, ratings);
 		lv.setAdapter(adapter);
 	}
 
