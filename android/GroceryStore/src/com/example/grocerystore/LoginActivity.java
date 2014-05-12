@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class LoginActivity extends Activity implements Callback {
+public class LoginActivity extends MenuActivity implements Callback {
 
 	protected EditText textUsername;
 	protected EditText textPassword;

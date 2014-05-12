@@ -22,6 +22,7 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int shopping_cart=0x7f020001;
     }
     public static final class id {
         public static final int Address=0x7f080024;
@@ -36,6 +37,7 @@ public final class R {
         public static final int Username=0x7f080007;
         public static final int Zipcode=0x7f080029;
         public static final int action_settings=0x7f08002c;
+        public static final int action_shoppingcart=0x7f08002d;
         public static final int button1=0x7f08001b;
         public static final int button_get_shopper=0x7f080010;
         public static final int button_list_products=0x7f080011;

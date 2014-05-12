@@ -12,7 +12,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class ProductDetails extends Activity {
+public class ProductDetails extends MenuActivity {
 	String label;
 	String thumbnail;
 	double price;

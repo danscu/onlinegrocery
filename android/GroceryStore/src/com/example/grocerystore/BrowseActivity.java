@@ -18,7 +18,7 @@ import edu.scu.ogstest.APITask.APIResult;
 import edu.scu.ogstest.APITask.Callback;
 import edu.scu.ogstest.InventoryDetail;
 
-public class BrowseActivity extends Activity implements Callback, OnItemClickListener {
+public class BrowseActivity extends MenuActivity implements Callback, OnItemClickListener {
 	ListView lv;
 	CustomAdapter adapter;
 	List<String> labels;
