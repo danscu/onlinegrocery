@@ -19,7 +19,7 @@ public class Cart {
 	}
 
 	// Get the singleton instance
-	public Cart getInstance() {
+	public static Cart getInstance() {
 		if (mInstance == null)
 			mInstance = new Cart();
 		return mInstance;
