@@ -55,6 +55,8 @@ public class ProductDetails extends MenuActivity {
 		tvPrice = (TextView) findViewById(R.id.label_price);
 		tvPrice.setText("$" + price);
 		
+		tvTotal = (TextView) findViewById(R.id.total);
+		
 		rg = (RadioGroup)findViewById(R.id.radioGroup1);
 		rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			
