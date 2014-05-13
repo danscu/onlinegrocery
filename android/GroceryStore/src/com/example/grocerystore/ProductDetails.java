@@ -50,6 +50,7 @@ public class ProductDetails extends MenuActivity {
 		label = intent.getStringExtra("labels");
 		thumbnail = intent.getStringExtra("thumbnails");
 		price = intent.getDoubleExtra("price", 0);
+		
 
 		tvPrice = (TextView) findViewById(R.id.label_price);
 		tvPrice.setText("$" + price);
@@ -84,7 +85,7 @@ public class ProductDetails extends MenuActivity {
 				total = price * (quantity + TAX) + shipping;
 				tvTotal.setText(Double.toString(total));
 				
-				Cart.getInstance().addToCart(itemId, quantity, imageUrl, unitPrice)
+				Cart.getInstance().addToCart(id, quantity, thumbnail, price);
 			}
 			
 			

@@ -38,7 +38,7 @@ public final class R {
         public static final int Zipcode=0x7f080028;
         public static final int action_settings=0x7f08002b;
         public static final int action_shoppingcart=0x7f08002c;
-        public static final int button1=0x7f08001a;
+        public static final int button1=0x7f08001e;
         public static final int button_get_shopper=0x7f08000f;
         public static final int button_list_products=0x7f080010;
         public static final int button_list_shoppers=0x7f08000e;
@@ -53,10 +53,10 @@ public final class R {
         public static final int label_price=0x7f080014;
         public static final int listView=0x7f080003;
         public static final int price=0x7f080002;
-        public static final int quantity=0x7f08001e;
-        public static final int radio0=0x7f08001c;
-        public static final int radio1=0x7f08001d;
-        public static final int radioGroup1=0x7f08001b;
+        public static final int quantity=0x7f08001d;
+        public static final int radio0=0x7f08001b;
+        public static final int radio1=0x7f08001c;
+        public static final int radioGroup1=0x7f08001a;
         public static final int shipping=0x7f080017;
         public static final int tax=0x7f080015;
         public static final int textView1=0x7f08000c;
