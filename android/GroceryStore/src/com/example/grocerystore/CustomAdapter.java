@@ -44,7 +44,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
         TextView label = (TextView)v.findViewById(R.id.label);
         TextView price = (TextView)v.findViewById(R.id.price);
         ImageView thumbnail = (ImageView)v.findViewById(R.id.image);
-        RatingBar ratingBar= (RatingBar)v.findViewById(R.id.ratingBar);
+//        RatingBar ratingBar= (RatingBar)v.findViewById(R.id.ratingBar);
 
         label.setText(labels.get(position));
         if (priceList != null) {
@@ -54,7 +54,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
                 price.setText("N/A");
         }
 
-        ratingBar.setRating(ratings.get(position));
+//        ratingBar.setRating(ratings.get(position));
 
         BitmapWorkerTask task = new BitmapWorkerTask(thumbnail);
         task.execute(thumbnails.get(position));

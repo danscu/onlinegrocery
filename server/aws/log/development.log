@@ -2691,3 +2691,181 @@ ActionController::ParameterMissing (param not found: shopper_account):
   Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
   Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
   Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOrderNumberToOrderHistory (20140420220838)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOrderNumberToOrderHistory (20140420220838)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "order_histories" ADD "order_number" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140420220838"]]
+  [1m[36m (201.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-20 15:14:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 2017ms (Views: 1992.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/inventory_details.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/order_history_joints.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/order_histories.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/payment_types.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/shopper_accounts.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/shipping_types.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/static.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/supplier_accounts.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/inventory_details.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/order_histories.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/order_history_joints.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/payment_types.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/shipping_types.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/shopper_accounts.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/static.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/supplier_accounts.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:13 -0700
+
+
+Started GET "/order_histories" for 127.0.0.1 at 2014-04-20 15:14:18 -0700
+Processing by OrderHistoriesController#index as HTML
+  [1m[35mOrderHistory Load (0.1ms)[0m  SELECT "order_histories".* FROM "order_histories"
+  Rendered order_histories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 60ms (Views: 26.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/order_histories/new" for 127.0.0.1 at 2014-04-20 15:14:21 -0700
+Processing by OrderHistoriesController#new as HTML
+  Rendered order_histories/_form.html.erb (298.5ms)
+  Rendered order_histories/new.html.erb within layouts/application (343.0ms)
+Completed 200 OK in 349ms (Views: 347.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/order_histories" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+Processing by OrderHistoriesController#index as HTML
+  [1m[36mOrderHistory Load (0.3ms)[0m  [1mSELECT "order_histories".* FROM "order_histories"[0m
+  Rendered order_histories/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/order_histories.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/inventory_details.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/order_history_joints.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/payment_types.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/shopper_accounts.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/shipping_types.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/static.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/supplier_accounts.css?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/inventory_details.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/order_histories.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/order_history_joints.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/payment_types.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/shopper_accounts.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/shipping_types.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/static.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/supplier_accounts.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-20 15:14:26 -0700
+
+
+Started GET "/order_histories/new" for 127.0.0.1 at 2014-04-20 15:16:02 -0700
+Processing by OrderHistoriesController#new as HTML
+  Rendered order_histories/_form.html.erb (1.7ms)
+  Rendered order_histories/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)

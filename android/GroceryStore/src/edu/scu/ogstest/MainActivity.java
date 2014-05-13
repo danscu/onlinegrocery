@@ -2,8 +2,6 @@ package edu.scu.ogstest;
 
 import java.util.Random;
 
-import com.example.grocerystore.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +9,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.grocerystore.R;
 
 public class MainActivity extends Activity implements OnClickListener, APITask.Callback {
 	private Button btnCreateShopper;

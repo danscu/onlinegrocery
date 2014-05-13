@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140302231536) do
+ActiveRecord::Schema.define(version: 20140420220838) do
 
   create_table "inventory_details", force: true do |t|
     t.integer  "supplierID"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140302231536) do
     t.decimal  "pricePerUnit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "order_number"
   end
 
   create_table "order_history_joints", force: true do |t|
