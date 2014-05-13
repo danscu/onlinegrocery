@@ -21,6 +21,7 @@ public class ProductDetails extends MenuActivity {
 	double shipping;
 	double total;
 	int quantity;
+	int id;
 	
 	ImageView iv;
 	TextView tvBrad;
@@ -44,6 +45,7 @@ public class ProductDetails extends MenuActivity {
 		bt = (Button)findViewById(R.id.button1);
 		
 		Intent intent = getIntent();
+		id = intent.getIntExtra("id", -1);
 		label = intent.getStringExtra("labels");
 		thumbnail = intent.getStringExtra("thumbnails");
 		price = intent.getDoubleExtra("price", 0);

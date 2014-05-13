@@ -21,6 +21,7 @@ import edu.scu.ogstest.InventoryDetail;
 public class BrowseActivity extends MenuActivity implements Callback, OnItemClickListener {
 	ListView lv;
 	CustomAdapter adapter;
+	List<Integer> ids;
 	List<String> labels;
 	List<String> thumbnails;
 	List<Double> priceList;
@@ -35,6 +36,7 @@ public class BrowseActivity extends MenuActivity implements Callback, OnItemClic
 		lv = (ListView)findViewById(R.id.listView);
 		lv.setOnItemClickListener(this);
 		
+		ids = new ArrayList<Integer>();
 		labels = new ArrayList<String>();
 		thumbnails = new ArrayList<String>();
 		priceList = new ArrayList<Double>();
@@ -56,19 +58,21 @@ public class BrowseActivity extends MenuActivity implements Callback, OnItemClic
 	}
 	
 	protected void updateProducts() {
+		ids.clear();
 		labels.clear();
 		thumbnails.clear();
 		priceList.clear();
 		for (InventoryDetail inv : products) {
-		     labels.add(inv.itemName);
-		     thumbnails.add(inv.imageSrc);
+			ids.add(inv.id);
+			labels.add(inv.itemName);
+			thumbnails.add(inv.imageSrc);
 
-		     Double price = null;
-		     try {
-		    	 price = Double.parseDouble(inv.itemPricePerUnit);
-		     } catch (NumberFormatException e) { }
+			Double price = null;
+			try {
+				price = Double.parseDouble(inv.itemPricePerUnit);
+			} catch (NumberFormatException e) { }
 
-		     priceList.add(price);
+			priceList.add(price);
 		}
 		
 		// hardcoded ratings ArrayList for testing, will need to pull ratings from DB
@@ -100,6 +104,7 @@ public class BrowseActivity extends MenuActivity implements Callback, OnItemClic
 		//System.out.println(pos + " " + id);
 		Intent intent = new Intent(BrowseActivity.this, ProductDetails.class);
 		intent.putExtra("pos", pos);
+		intent.putExtra("id", ids.get(pos));
 		intent.putExtra("label", labels.get(pos));
 		intent.putExtra("image", thumbnails.get(pos));
 		intent.putExtra("price", priceList.get(pos));
