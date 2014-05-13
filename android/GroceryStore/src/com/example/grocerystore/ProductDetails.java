@@ -1,5 +1,6 @@
 package com.example.grocerystore;
 
+import edu.scu.ogstest.Cart;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -82,6 +83,8 @@ public class ProductDetails extends MenuActivity {
 				quantity = Integer.parseInt(etQuantity.getText().toString());
 				total = price * (quantity + TAX) + shipping;
 				tvTotal.setText(Double.toString(total));
+				
+				Cart.getInstance().addToCart(itemId, quantity, imageUrl, unitPrice)
 			}
 			
 			

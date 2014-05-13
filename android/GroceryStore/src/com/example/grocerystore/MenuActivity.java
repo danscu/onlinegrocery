@@ -20,6 +20,7 @@ public class MenuActivity extends Activity {
             //Intent i = new Intent(LoginActivity.this, cart.class);
 
             Toast.makeText(this, "shopping cart activity is triggered", Toast.LENGTH_SHORT).show();
+            
             return true;
         }
         else {
