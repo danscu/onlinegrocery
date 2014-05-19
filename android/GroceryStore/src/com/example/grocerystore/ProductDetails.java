@@ -35,8 +35,6 @@ public class ProductDetails extends MenuActivity {
 	RadioGroup rg;
 	RadioButton rb;
 	Button bt;
-	
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +47,13 @@ public class ProductDetails extends MenuActivity {
 		
 		Intent intent = getIntent();
 		id = intent.getIntExtra("id", -1);
-		label = intent.getStringExtra("labels");
-		thumbnail = intent.getStringExtra("thumbnails");
+		label = intent.getStringExtra("label");
+		thumbnail = intent.getStringExtra("image");
 		price = intent.getDoubleExtra("price", 0);
 		
-
+		tvBrad = (TextView) findViewById(R.id.label_brand);
+		tvBrad.setText(label);
+		
 		tvPrice = (TextView) findViewById(R.id.label_price);
 		tvPrice.setText("$" + price);
 		
@@ -86,7 +86,7 @@ public class ProductDetails extends MenuActivity {
 			@Override
 			public void onClick(View arg0) {
 				quantity = Integer.parseInt(etQuantity.getText().toString());
-				total = price * (quantity + TAX) + shipping;
+				total = price * quantity * (1 + TAX) + shipping;
 				tvTotal.setText(Double.toString(total));
 				
 				Cart.getInstance().addToCart(id, label, quantity, thumbnail, price);
@@ -95,6 +95,9 @@ public class ProductDetails extends MenuActivity {
 			
 		});
 		
+		iv = (ImageView) findViewById(R.id.imageView1);
+		BitmapWorkerTask task = new BitmapWorkerTask(iv);
+        task.execute(thumbnail);
 	}
 
 }

@@ -46,7 +46,7 @@ public class CartAdapter extends ArrayAdapter<CartItem> {
         
         label.setText(ci.label);
         price.setText("$" + ci.unitPrice);
-        qty.setText("$" + ci.quantity);
+        qty.setText("x" + ci.quantity);
 
 //        ratingBar.setRating(ratings.get(position));
 

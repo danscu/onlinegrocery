@@ -3,10 +3,8 @@ package com.example.grocerystore;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,14 +47,14 @@ public class BrowseActivity extends MenuActivity implements Callback, OnItemClic
 		APITask api = new APITask(APITask.WhatToAccess.INVENTORY_DETAIL, this);
 		api.listData();
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.browse, menu);
 		return true;
 	}
-	
+
 	protected void updateProducts() {
 		ids.clear();
 		labels.clear();
@@ -74,7 +72,7 @@ public class BrowseActivity extends MenuActivity implements Callback, OnItemClic
 
 			priceList.add(price);
 		}
-		
+
 		// hardcoded ratings ArrayList for testing, will need to pull ratings from DB
 		ratings.add((float) 3.5); 
 		ratings.add((float) 2.0);
@@ -101,7 +99,6 @@ public class BrowseActivity extends MenuActivity implements Callback, OnItemClic
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-		//System.out.println(pos + " " + id);
 		Intent intent = new Intent(BrowseActivity.this, ProductDetails.class);
 		intent.putExtra("pos", pos);
 		intent.putExtra("id", ids.get(pos));

@@ -102,6 +102,7 @@ public final class R {
         public static final int title_activity_browse=0x7f050005;
         public static final int title_activity_custom_adapter=0x7f050004;
         public static final int title_activity_product_details=0x7f050006;
+        public static final int title_view_cart=0x7f050007;
     }
     public static final class style {
         /** 
