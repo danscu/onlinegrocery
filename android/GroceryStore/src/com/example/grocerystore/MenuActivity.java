@@ -1,6 +1,7 @@
 package com.example.grocerystore;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -17,10 +18,9 @@ public class MenuActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_shoppingcart) {
 
-            //Intent i = new Intent(LoginActivity.this, cart.class);
-
-            Toast.makeText(this, "shopping cart activity is triggered", Toast.LENGTH_SHORT).show();
-            
+            Intent i = new Intent(this, ViewCartActivity.class);
+//            Toast.makeText(this, "shopping cart activity is triggered", Toast.LENGTH_SHORT).show();
+            startActivity(i);
             return true;
         }
         else {

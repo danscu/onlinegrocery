@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-	class CartItem {
+	public class CartItem {
 		public int itemId;
 		public int quantity;
+		public String label;
 		public String imageUrl;
 		public double unitPrice;
 	}
@@ -44,10 +45,12 @@ public class Cart {
 	}
 
 	// Add an item to cart
-	public boolean addToCart(int itemId, int quantity,
+	public boolean addToCart(int itemId, String label, int quantity,
 			                 String imageUrl, double unitPrice) {
 		CartItem ci = getItem(itemId, true);
-		ci.itemId += quantity;
+		ci.label = label;
+		ci.itemId = itemId;
+		ci.quantity = quantity;
 		ci.imageUrl = imageUrl;
 		ci.unitPrice = unitPrice;
 		return true;

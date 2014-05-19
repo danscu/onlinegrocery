@@ -89,7 +89,7 @@ public class ProductDetails extends MenuActivity {
 				total = price * (quantity + TAX) + shipping;
 				tvTotal.setText(Double.toString(total));
 				
-				Cart.getInstance().addToCart(id, quantity, thumbnail, price);
+				Cart.getInstance().addToCart(id, label, quantity, thumbnail, price);
 			}
 			
 			

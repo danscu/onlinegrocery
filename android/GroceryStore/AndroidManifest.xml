@@ -45,6 +45,11 @@
             android:name="com.example.grocerystore.ProductDetails"
             android:label="@string/title_activity_product_details" >
         </activity>
+        
+        <activity
+            android:name="com.example.grocerystore.ViewCartActivity"
+            android:label="@string/title_view_cart" >
+        </activity>
     </application>
 
 </manifest>
