@@ -9,6 +9,7 @@ public class ViewCartActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		//this.setContentView(R.layout.);
 	}
 
 }

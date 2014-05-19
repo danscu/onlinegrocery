@@ -35,6 +35,8 @@ public class ProductDetails extends MenuActivity {
 	RadioGroup rg;
 	RadioButton rb;
 	Button bt;
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
