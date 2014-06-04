@@ -83,4 +83,11 @@ public class Cart {
 	public void clear() {
 		mCart.clear();
 	}
+	
+	public double getTotal() {
+		double sum = 0d;
+		for (CartItem ci : getAllItems())
+			sum += ci.unitPrice * ci.quantity;
+		return sum;
+	}
 }

@@ -11,4 +11,14 @@
         android:layout_alignParentTop="true">
     </ListView>
 
+     <Button
+        android:id="@+id/checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="Checkout" 
+        android:onClick="onCheckout" />
+    
 </RelativeLayout>

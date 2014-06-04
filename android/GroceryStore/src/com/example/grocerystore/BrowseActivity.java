@@ -48,13 +48,6 @@ public class BrowseActivity extends MenuActivity implements Callback, OnItemClic
 		api.listData();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.browse, menu);
-		return true;
-	}
-
 	protected void updateProducts() {
 		ids.clear();
 		labels.clear();

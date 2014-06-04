@@ -50,6 +50,17 @@
             android:name="com.example.grocerystore.ViewCartActivity"
             android:label="@string/title_view_cart" >
         </activity>
+        
+        <activity
+            android:name="com.example.grocerystore.CheckoutActivity"
+            android:label="Check out" >
+        </activity>
+        
+		<activity
+            android:name="com.example.grocerystore.ThankYouActivity"
+            android:label="Thank you" >
+        </activity>
+        
     </application>
 
 </manifest>

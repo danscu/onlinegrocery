@@ -4,6 +4,8 @@ import edu.scu.ogstest.Cart;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ProductDetails extends MenuActivity {
 	String label;
@@ -58,6 +61,20 @@ public class ProductDetails extends MenuActivity {
 		tvPrice.setText("$" + price);
 		
 		tvTotal = (TextView) findViewById(R.id.total);
+		etQuantity.addTextChangedListener(new TextWatcher(){
+	        public void afterTextChanged(Editable s) {
+	        	try {
+	        	quantity = Integer.parseInt(etQuantity.getText().toString());
+	        	} catch (Exception e) {
+	        		quantity = 0;
+	        	}
+	        	total = price * quantity * (1 + TAX) + shipping;
+				total = Math.floor(total * 100 + 0.5) / 100;
+				tvTotal.setText(Double.toString(total));
+	        }
+	        public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+	        public void onTextChanged(CharSequence s, int start, int before, int count){}
+	    }); 
 		
 		rg = (RadioGroup)findViewById(R.id.radioGroup1);
 		rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -84,14 +101,12 @@ public class ProductDetails extends MenuActivity {
 		bt.setOnClickListener(new OnClickListener(){
 
 			@Override
-			public void onClick(View arg0) {
-				quantity = Integer.parseInt(etQuantity.getText().toString());
-				total = price * quantity * (1 + TAX) + shipping;
-				tvTotal.setText(Double.toString(total));
-				
+			public void onClick(View arg0) {				
 				Cart.getInstance().addToCart(id, label, quantity, thumbnail, price);
+				Toast.makeText(ProductDetails.this, "Added to cart", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(ProductDetails.this, BrowseActivity.class);
+				startActivity(intent);
 			}
-			
 			
 		});
 		
